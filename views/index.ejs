@@ -15,6 +15,7 @@
     <link rel='stylesheet' href='/stylesheets/loader.css' />
     <link rel='stylesheet' href='/stylesheets/navigation.css' />
     <link rel='stylesheet' href='/stylesheets/home.css' />
+    <link rel='stylesheet' href='/stylesheets/about.css' />
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="/javascripts/bootstrap.min.js"></script>
@@ -59,14 +60,14 @@
 
       <div class="sidebar-menu">
         <ul>
-          <li class="<%= title == 'Harshit Kamboj'? "activeLink" : '' %>">
-            <a href="/">
+          <li>
+            <a href="#home">
               <span class="menu-text">HOME</span>
               <span class="sub-text">A bit of everything</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="#about">
               <span class="menu-text">WHO AM I?</span>
               <span class="sub-text">Me trying to describe myself</span>
             </a>
@@ -114,7 +115,7 @@
     <div class="container-fluid">
 
       <div class="row">
-        <div class="col-lg-12" id="home">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="home">
           <div class="z2">
             <h1>HARSHIT KAMBOJ</h1>
             <p>WEB-DESIGNER | DEVELOPER | LEFT & RIGHT THINKER</p>
@@ -233,6 +234,31 @@
             }
         </script>
       </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="about">
+          <div class="vertical-line l1"></div>
+          <div class="vertical-line l2"></div>
+          <div class="vertical-line l3"></div>
+          <div class="vertical-line l4"></div>
+          <div class="vertical-line l5"></div>
+          <div class="vertical-line l6"></div>
+
+          <center>
+            <img src="images/me.jpg" alt="Me">
+          </center>
+          <div class="row" style="margin-top: -15px; margin-left: 0px; background: inherit ">
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-3"></div>
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-6 myself">
+              <h4>Creative Developer & Junior Student in YMCA University, Faridabad(INDIA)</h4>
+              <p>My name is Harshit Kamboj, curious and enthusiastic, practicing in Front End Development,mainly focused on user's interactions and performances, I am always experimenting new methods and techniques to improve my workflow.</p>
+              <p>You can find me on <a href="https://github.com/Harshit2110" target="_blank">Github</a> and <a href="https://www.linkedin.com/in/harshit-kamboj-613a34126/" target="_blank">LinkedIn.</a></p>
+            </div>
+          </div>
+          <div class="hr-line h2"></div>
+        </div>
+      </div>
+
     </div>
   </div>
   <!--Content-->
