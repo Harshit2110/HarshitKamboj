@@ -11,16 +11,11 @@
     <link rel='stylesheet' href='/stylesheets/normalize.css' />
     <link rel='stylesheet' href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
     <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
-    <link rel='stylesheet' href='/stylesheets/fonts.css' />
-    <link rel='stylesheet' href='/stylesheets/loader.css' />
-    <link rel='stylesheet' href='/stylesheets/navigation.css' />
-    <link rel='stylesheet' href='/stylesheets/home.css' />
-    <link rel='stylesheet' href='/stylesheets/about.css' />
+    <link rel='stylesheet' href='/stylesheets/main.css' />
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="/javascripts/bootstrap.min.js"></script>
-    <script src="/javascripts/loader.js"></script>
-    <script src="/javascripts/menuToggle.js"></script>
+    <script src="/javascripts/main.js"></script>
     <script src="/javascripts/modernizr-2.6.2.min.js"></script>
     <script src="/javascripts/three.min.js"></script>
     <script src="/javascripts/Projector.js"></script>
@@ -73,13 +68,13 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="#project">
               <span class="menu-text">PROJECTS</span>
               <span class="sub-text">A bit of work</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="#contact">
               <span class="menu-text">CONTACT ME</span>
               <span class="sub-text">Get in touch</span>
             </a>
@@ -256,6 +251,109 @@
             </div>
           </div>
           <div class="hr-line h2"></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="project">
+          <div class="hr-line h3"></div>
+
+          <div class="row" style="margin-top: -15px; margin-left: 0px;">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 project_wrapper" id="upasthiti">
+              <img src="images/Upasthiti.jpg" alt="Upasthiti">
+              <a href="https://upasthiti.herokuapp.com/">
+                <h4>Upasthiti | Online Attendance Portal-YMCA</h4>
+                <p>UI/UX, FullStack Development</p>
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+          <div class="hr-line h3"></div>
+
+          <div class="row" style="margin-top: -15px; margin-left: 0px;">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 project_wrapper" id="publicmarket">
+              <img src="images/PublicMarket.jpg" alt="publicmarket">
+              <a href="https://github.com/dynamictushar903/BiddingProject">
+                <h4>Public Market | Online Bidding</h4>
+                <p>UI/UX, FrontEnd Development</p>
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+          <div class="hr-line h3"></div>
+
+          <div class="row" style="margin-top: -15px; margin-left: 0px;">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 project_wrapper" id="chatbot">
+              <img src="images/chatbot.jpg" alt="chatbot">
+              <a href="https://speech-ai-bot.herokuapp.com/">
+                <h4>Speech AI ChatBot | Web Speech API</h4>
+                <p>Simple, Practicing NLP</p>
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+          <div class="hr-line h3"></div>
+
+          <div class="row" style="margin-top: -15px; margin-left: 0px;">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 project_wrapper" id="urlshort">
+              <img src="images/urlshort.jpg" alt="urlshort">
+              <a href="#">
+                <h4>URL Shortener</h4>
+                <p>UI/UX, FullStack Development</p>
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+          <div class="hr-line h3"></div>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top: -15px; margin-left: 0px;">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="contact">
+          <div class="vertical-line l1"></div>
+          <div class="vertical-line l2"></div>
+          <div class="vertical-line l3"></div>
+          <div class="vertical-line l4"></div>
+          <div class="vertical-line l5"></div>
+          <div class="vertical-line l6"></div>
+
+          <div class="row">
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-3"></div>
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-6" id="contact_form">
+              <h3>WHAT CAN I DO FOR U?</h3>
+              <p>I'm available for freelance projects</p>
+
+              <form method="post" action="/send">
+                <div class="row">
+
+                  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <div class="form-group">
+                      <label class="control-label" style="margin-bottom: 2px;">Name</label>
+                      <input type="text" name="name" placeholder="Enter Name" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <div class="form-group">
+                      <label class="control-label" style="margin-bottom: 2px;">Email</label>
+                      <input type="email" name="email" placeholder="Enter Email" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="form-group">
+                      <label class="control-label" style="margin-bottom: 2px;">Message</label>
+                      <textarea name="message" placeholder="Enter Message..." cols="10" rows="5" class="form-control"></textarea>
+                    </div>
+                  </div>
+                </div>
+
+                <center><button type="submit" class="btn btn-custom">CONTACT ME</button></center>
+
+              </form>
+
+              <p class="footer">&copy; 2018. All rights reserved. | Design by Harshit Kamboj.</p>
+            </div>
+          </div>
+
         </div>
       </div>
 
