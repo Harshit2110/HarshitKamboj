@@ -16,8 +16,8 @@ router.get('/', function(req, res, next) {
 router.post('/send', function (req,res,next) {
    var transporter = nodemailer.createTransport({
        service: 'Gmail',
-       //host: 'smtp.gmail.com',
-       host: 'https://harshitkamboj.herokuapp.com/',
+       host: 'smtp.gmail.com',
+       //host: 'https://harshitkamboj.herokuapp.com/',
        port: 587,
        secure: false,
        auth: {
