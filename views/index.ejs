@@ -14,11 +14,16 @@
     <link rel='stylesheet' href='/stylesheets/fonts.css' />
     <link rel='stylesheet' href='/stylesheets/loader.css' />
     <link rel='stylesheet' href='/stylesheets/navigation.css' />
+    <link rel='stylesheet' href='/stylesheets/home.css' />
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="/javascripts/bootstrap.min.js"></script>
     <script src="/javascripts/loader.js"></script>
     <script src="/javascripts/menuToggle.js"></script>
+    <script src="/javascripts/modernizr-2.6.2.min.js"></script>
+    <script src="/javascripts/three.min.js"></script>
+    <script src="/javascripts/Projector.js"></script>
+    <script src="/javascripts/CanvasRenderer.js"></script>
   </head>
   <body>
 
@@ -54,8 +59,8 @@
 
       <div class="sidebar-menu">
         <ul>
-          <li>
-            <a href="#">
+          <li class="<%= title == 'Harshit Kamboj'? "activeLink" : '' % >">
+            <a href="/">
               <span class="menu-text">HOME</span>
               <span class="sub-text">A bit of everything</span>
             </a>
@@ -81,7 +86,7 @@
         </ul>
       </div>
 
-      <a href="#" class="navbar-brand">
+      <a href="/" class="navbar-brand">
         <img src="/images/HK.png" width="50" height="53" alt="LOGO">
       </a>
 
@@ -92,12 +97,12 @@
       <div class="social-container">
         <ul>
           <li>
-            <a href="#">
+            <a href="https://github.com/Harshit2110" target="_blank">
               <img src="/images/GitHub.png" width="25" height="25" alt="Github">
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="https://www.linkedin.com/in/harshit-kamboj-613a34126/" target="_blank">
               <img src="/images/linkedin.png" width="25" height="25" alt="Linkedin">
             </a>
           </li>
@@ -106,6 +111,129 @@
     </nav>
     <!--Navigation-->
 
+    <div class="container-fluid">
+
+      <div class="row">
+        <div class="col-lg-12" id="home">
+          <div class="z2">
+            <h1>HARSHIT KAMBOJ</h1>
+            <p>WEB-DESIGNER | DEVELOPER | LEFT & RIGHT THINKER</p>
+            <center>
+              <a href="https://drive.google.com/open?id=1ExlXZJlDmt_nyddTmLoGC3_UaE701cim" target="_blank"><button type="button" class="btn btn-custom">CHECK OUT MY CV</button></a>
+            </center>
+            <section id="scroll" class="scroll-btn">
+              <a href="#about">
+                <span></span>
+                <span></span>
+                <span></span>
+              </a>
+            </section>
+            <script>
+                $(function() {
+                    $('a[href*=#]').on('click', function(e) {
+                        e.preventDefault();
+                        $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
+                    });
+                });
+            </script>
+          </div>
+        </div>
+        <script>
+            var SEPARATION = 100, AMOUNTX = 50, AMOUNTY = 50;
+            var container;
+            var camera, scene, renderer;
+            var particles, particle, count = 0;
+            var mouseX = 0, mouseY = 0;
+            var windowHalfX = window.innerWidth / 2;
+            var windowHalfY = window.innerHeight / 2;
+            init();
+            animate();
+            function init() {
+                container = document.querySelector('#home');
+                camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
+                camera.position.z = 1000;
+                scene = new THREE.Scene();
+                scene.background = new THREE.Color(0x000000);
+                particles = new Array();
+                var PI2 = Math.PI * 2;
+                var material = new THREE.SpriteCanvasMaterial( {
+                    color: 0xffffff,
+                    program: function ( context ) {
+                        context.beginPath();
+                        context.arc( 0, 0, 0.5, 0, PI2, true );
+                        context.fill();
+                    }
+                } );
+                var i = 0;
+                for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
+                    for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
+                        particle = particles[ i ++ ] = new THREE.Sprite( material );
+                        particle.position.x = ix * SEPARATION - ( ( AMOUNTX * SEPARATION ) / 2 );
+                        particle.position.z = iy * SEPARATION - ( ( AMOUNTY * SEPARATION ) / 2 );
+                        scene.add( particle );
+                    }
+                }
+                renderer = new THREE.CanvasRenderer();
+                renderer.setPixelRatio( window.devicePixelRatio );
+                renderer.setSize( window.innerWidth, window.innerHeight );
+                container.insertBefore(renderer.domElement,container.firstChild);
+                document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+                document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+                document.addEventListener( 'touchmove', onDocumentTouchMove, false );
+                //
+                window.addEventListener( 'resize', onWindowResize, false );
+            }
+            function onWindowResize() {
+                windowHalfX = window.innerWidth / 2;
+                windowHalfY = window.innerHeight / 2;
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize( window.innerWidth, window.innerHeight );
+            }
+            //
+            function onDocumentMouseMove( event ) {
+                mouseX = event.clientX - windowHalfX;
+                mouseY = event.clientY - windowHalfY;
+            }
+            function onDocumentTouchStart( event ) {
+                if ( event.touches.length === 1 ) {
+                    event.preventDefault();
+                    mouseX = event.touches[ 0 ].pageX - windowHalfX;
+                    mouseY = event.touches[ 0 ].pageY - windowHalfY;
+                }
+            }
+            function onDocumentTouchMove( event ) {
+                if ( event.touches.length === 1 ) {
+                    event.preventDefault();
+                    mouseX = event.touches[ 0 ].pageX - windowHalfX;
+                    mouseY = event.touches[ 0 ].pageY - windowHalfY;
+                }
+            }
+            //
+            function animate() {
+                requestAnimationFrame( animate );
+                render();
+            }
+            function render() {
+                camera.position.x += ( mouseX - camera.position.x ) * .05;
+                camera.position.y += ( - mouseY - camera.position.y ) * .05;
+                camera.lookAt( scene.position );
+                var i = 0;
+                for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
+                    for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
+                        particle = particles[ i++ ];
+                        particle.position.y = ( Math.sin( ( ix + count ) * 0.3 ) * 50 ) +
+                            ( Math.sin( ( iy + count ) * 0.5 ) * 50 );
+                        particle.scale.x = particle.scale.y = ( Math.sin( ( ix + count ) * 0.3 ) + 1 ) * 4 +
+                            ( Math.sin( ( iy + count ) * 0.5 ) + 1 ) * 4;
+                    }
+                }
+                renderer.render( scene, camera );
+                count += 0.1;
+            }
+        </script>
+      </div>
+    </div>
   </div>
   <!--Content-->
 

@@ -110,6 +110,13 @@
     font-weight: lighter;
     display: block;
 }
+
+.activeLink a .menu-text,
+.activeLink a .sub-text {
+    color: #15a8f4;
+    text-decoration: line-through;
+    text-decoration-color: #ffffff;
+}
 .sidebar-menu ul li:hover a .menu-text{
     color: #15a8f4;
     text-decoration: line-through;

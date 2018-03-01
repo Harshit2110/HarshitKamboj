@@ -1,0 +1,72 @@
+#about {
+    height: 100vh;
+    overflow: hidden;
+    padding-right: 0px;
+}
+#about .vertical-line {
+    position: absolute;
+    border-left: 1px solid #99a3a4;
+    height: 100vh;
+    display: block;
+    opacity: 0.3;
+    box-shadow: 1px 0px 2px #99a3a4;
+}
+#about .vertical-line.l1 {
+    left: 10vw;
+}
+#about .vertical-line.l2 {
+    left: 25vw;
+}
+#about .vertical-line.l3 {
+    left: 40vw;
+}
+#about .vertical-line.l4 {
+    left: 55vw;
+}
+#about .vertical-line.l5 {
+    left: 70vw;
+}
+#about .vertical-line.l6 {
+    left: 85vw;
+}
+#about .hr-line {
+    position: relative;
+    overflow: visible;
+    height: 1px;
+    border-collapse: collapse;
+}
+#about .hr-line.h1 {
+    margin-top: 200px;
+    background-color: inherit;
+    border: 3px solid inherit;
+}
+#about .hr-line.h2 {
+    background-color: inherit;
+    border: 3px solid inherit;
+}
+#about .hr-line span {
+    position: absolute;
+    margin-top: -100px;
+    left: 44%;
+}
+#about .hr-line span img {
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    border: 5px solid #15a8f4;
+}
+#about .myself {
+    padding-top: 85px;
+    text-align: center;
+}
+#about .myself h4 {
+    font-family: 'Russo One', sans-serif;
+    color: #15a8f4;
+}
+#about .myself p {
+    font-family: 'Dancing Script', cursive;
+    margin-top: 1.5em;
+    font-size: 25px;
+    color: #000000;
+    letter-spacing: 0.08em;
+}
