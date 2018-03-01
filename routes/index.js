@@ -6,6 +6,8 @@ var nodemailer = require('nodemailer');
 var USER_NAME = process.env.USER_NAME;
 var PASS_WORD = process.env.PASS_WORD;
 
+console.log('username: '+ USER_NAME);
+console.log('password: '+ PASS_WORD);
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Harshit Kamboj' });
